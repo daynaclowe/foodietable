@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141113194941) do
+=======
+ActiveRecord::Schema.define(version: 20141113192218) do
+>>>>>>> feffb31475334693baccc71fb2a158090c8cd5cc
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,10 +29,20 @@ ActiveRecord::Schema.define(version: 20141113194941) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "reviews", force: true do |t|
     t.string   "title"
     t.integer  "rating"
     t.text     "comments"
+=======
+  create_table "restaurants", force: true do |t|
+    t.string   "name"
+    t.string   "password_digest"
+    t.string   "address"
+    t.integer  "capacity"
+    t.text     "bio"
+    t.integer  "phone_number",    limit: 8
+>>>>>>> feffb31475334693baccc71fb2a158090c8cd5cc
     t.datetime "created_at"
     t.datetime "updated_at"
   end

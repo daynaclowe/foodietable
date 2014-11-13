@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
+
  resources :foodies
  resources :restaurants do
   resources :reviews
 end
+
 
 
 
