@@ -27,11 +27,11 @@ ActiveRecord::Schema.define(version: 20141113192218) do
 
   create_table "restaurants", force: true do |t|
     t.string   "name"
-    t.string   "password"
+    t.string   "password_digest"
     t.string   "address"
     t.integer  "capacity"
     t.text     "bio"
-    t.integer  "phone_number"
+    t.integer  "phone_number",    limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end

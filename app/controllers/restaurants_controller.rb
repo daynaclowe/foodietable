@@ -17,10 +17,12 @@ class RestaurantsController < ApplicationController
 
   def create
 
-    @restaurant = Restaurant.new(product_params)
+    @restaurant = Restaurant.new(restaurant_params)
+    @restaurant[:phone_number] = restaurant_params[:phone_number].gsub(/[^0-9a-z ]/i, '')
+
     @restaurant.save
     if @restaurant.save
-      redirect_to products_url
+      redirect_to restaurants_url
     else
       render :new
     end
@@ -28,8 +30,8 @@ class RestaurantsController < ApplicationController
 
   def update
     @restaurant = Restaurant.find(params[:id])
-    if @restaurant.update_attributes(product_params)
-      redirect_to product_path(@restaurant)
+    if @restaurant.update_attributes(restaurant_params)
+      redirect_to restaurant_path(@restaurant)
     else
       render :edit
     end
@@ -41,5 +43,9 @@ class RestaurantsController < ApplicationController
     redirect_to products_path
   end
 
+  private
+  def restaurant_params
+  	params.require(:restaurant).permit(:name, :password, :password_confirmation, :address, :capacity, :bio, :phone_number)
+  end
  
 end
