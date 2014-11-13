@@ -30,10 +30,10 @@ class ReviewsController < ApplicationController
 
 	private
 	def review_params
-		params.require(:review).permit(:comment, :foody_id)
+		params.require(:review).permit(:comment, :foodie_id)
 	end
 
 	def load_foody
-		@foody = Foody.find(params[:foody_id])
+		@foody = Foody.find(params[:foodie_id])
 	end
 end
