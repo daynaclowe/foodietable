@@ -1,0 +1,27 @@
+<%= form_for(@reservation) do |f| %>
+<!-- we need diner name, diner phone number, dinner email address, comments and request box, submit button -->
+
+	<div class="field">
+		<%= f.label :name %><br/>
+		<%= f.text_field :name %>
+	</div>
+	<div class="field">
+		<%= f.label :user_phone %><br/>
+		<%= f.number_field :user_phone %>
+	</div>
+	<div class="field">
+		<%= f.label :email_address %><br/>
+		<%= f.text_field :email_address %>
+	</div>
+	<div class="field">
+		<%= f.label :size_of_party %><br/>
+		<%= f.number_field :size_of_party %>
+	</div>
+	<div class="field">
+		<%= f.label :comments_and_requests %><br/>
+		<%= f.text_area :comments_and_requests %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>

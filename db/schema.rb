@@ -12,6 +12,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
+ActiveRecord::Schema.define(version: 20141113221026) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +42,17 @@
     t.integer  "phone_number",    limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "reservations", force: true do |t|
+    t.integer  "size_of_party"
+    t.text     "comments_and_requests"
+    t.integer  "user_phone"
+    t.datetime "res_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.string   "email_address"
   end
 
 end
