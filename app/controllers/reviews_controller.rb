@@ -26,14 +26,22 @@ class ReviewsController < ApplicationController
 			@review.destroy
 		end
 
+		def update
+			if @review.update_attributes(review_params)
+				redirect_to restaurant_path(@restaurant) 
+			# To defin the specific product 
+		else
+			render :edit
+		end
 	end
+end
 
-	private
-	def review_params
-		params.require(:review).permit(:comment, :foodie_id)
-	end
+private
+def review_params
+	params.require(:review).permit(:comment, :foodie_id)
+end
 
-	def load_foody
-		@foody = Foody.find(params[:foodie_id])
-	end
+def load_foody
+	@foody = Foody.find(params[:foodie_id])
+end
 end
