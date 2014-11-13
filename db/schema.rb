@@ -11,13 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20141113194941) do
-=======
-
 ActiveRecord::Schema.define(version: 20141113221026) do
-
->>>>>>> c8be66073c7bcfae8ed1d02deeb5ba3c4a76fb9c
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,38 +21,6 @@ ActiveRecord::Schema.define(version: 20141113221026) do
     t.string   "password"
     t.string   "email"
     t.text     "bio"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-<<<<<<< HEAD
-
-=======
-  create_table "reviews", force: true do |t|
-    t.string   "title"
-    t.integer  "rating"
-    t.text     "comments"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
->>>>>>> c8be66073c7bcfae8ed1d02deeb5ba3c4a76fb9c
-  create_table "restaurants", force: true do |t|
-    t.string   "name"
-    t.string   "password_digest"
-    t.string   "address"
-    t.integer  "capacity"
-    t.text     "bio"
-    t.integer  "phone_number",    limit: 8
-<<<<<<< HEAD
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "reviews", force: true do |t|
-    t.string   "title"
-    t.integer  "rating"
-    t.text     "comments"
-=======
->>>>>>> c8be66073c7bcfae8ed1d02deeb5ba3c4a76fb9c
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -72,6 +34,25 @@ ActiveRecord::Schema.define(version: 20141113221026) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "email_address"
+  end
+
+  create_table "restaurants", force: true do |t|
+    t.string   "name"
+    t.string   "password_digest"
+    t.string   "address"
+    t.integer  "capacity"
+    t.text     "bio"
+    t.integer  "phone_number",    limit: 8
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reviews", force: true do |t|
+    t.string   "title"
+    t.integer  "rating"
+    t.text     "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

@@ -7,10 +7,7 @@ Rails.application.routes.draw do
   resources :reviews
 end
 
-
-
-
-  resources :reservations
+ resources :reservations
 
 
   # The priority is based upon order of creation: first created -> highest priority.
