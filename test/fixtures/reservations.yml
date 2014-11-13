@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  size_of_party: 1
+  comments_and_requests: MyText
+  user_phone: 1
+  res_time: 2014-11-13 14:50:39
+
+two:
+  size_of_party: 1
+  comments_and_requests: MyText
+  user_phone: 1
+  res_time: 2014-11-13 14:50:39
