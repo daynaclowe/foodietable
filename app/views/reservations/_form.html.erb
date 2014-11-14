@@ -1,6 +1,16 @@
 <%= form_for(@reservation) do |f| %>
 <!-- we need diner name, diner phone number, dinner email address, comments and request box, submit button -->
+<% if @reservation.errors.any? %>
+	<div id="error_explanation">
+		<h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this product from being saved:</h2>
 
+      	<ul>
+      		<% @reservation.errors.full_messages.each do |msg| %>
+        	<li><%= msg %></li>
+      		<% end %>
+      	</ul>
+    </div>
+<% end %>
 	<div class="field">
 		<%= f.label :name %><br/>
 		<%= f.text_field :name %>
