@@ -35,11 +35,8 @@ group :development, :test do
 end
 
 # Use ActiveModel has_secure_password
-<<<<<<< HEAD
+
 gem 'bcrypt', '~> 3.1.7'
-=======
- gem 'bcrypt', '~> 3.1.7'
->>>>>>> 0f723e11fd17e7f09289e43dae3fac7629f76769
 
 # Use unicorn as the app server
 # gem 'unicorn'

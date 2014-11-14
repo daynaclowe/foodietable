@@ -1,3 +1,10 @@
 <h1>Your Reservation has been made at RESTAURANT NAME</h1>
 <p>Find me in app/views/reservations/show.html.erb</p>
+<p>Here's your reservation!</p>
 <p>RESERVATION CONFIRMED. YAY!</p>
+
+<p>Reservation is under <%= @reservation.name %></p>
+<p>Party size is <%= @reservation.size_of_party%></p>
+<p>Bon Appetit!</p>
+
+<p><%= link_to "Edit", edit_reservation_path %> <%= link_to "Make another reservation", new_reservation_path %></p>

@@ -7,15 +7,17 @@ class ReservationsController < ApplicationController
   	@reservation = Reservation.find(params[:id])
   end
 
-  def new 		#user to make a reservation
+  def new 		#user to create a reservation using the form
   	@reservation = Reservation.new
   end
 
   def edit 		#make changes to the reservation
   	@reservation = Reservation.find(params[:id])
+
+    render :edit
   end
 
-  def create 	#create a reservation
+  def create 	#add the new reservation database
   	@reservation = Reservation.new(reservation_params)
 
   	if @reservation.save
