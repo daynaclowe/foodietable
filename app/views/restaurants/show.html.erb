@@ -4,6 +4,15 @@
 <b>Capacity:</b> <%= @restaurant.capacity %></br>
 <b>Phone Number:</b> <%= number_to_phone(@restaurant.phone_number,area_code: true) %></br><br>
 
+
+
+
+<p>Reviews for <%= @restaurant.name %></p>
+
+<% @restaurant.reviews.each do |review| %>
+<p><%= review.comments %></p>
+<% end %>
+
 <%= form_for([@restaurant,@review]) do |f| %>
 
 <div class="field"> 

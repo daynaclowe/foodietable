@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
-	before_filter :load_product
-	before_filter :ensure_logged_in, only: [:create, :destroy]
+	before_filter :load_restaurant
+	# before_filter :ensure_logged_in, only: [:create, :destroy]
 
 	def index 
 		@reviews = Review.all
@@ -8,7 +8,6 @@ class ReviewsController < ApplicationController
 
 	def show
 		@review = Review.find(params[:id])
-		
 	end
 
 	def edit 
@@ -16,12 +15,16 @@ class ReviewsController < ApplicationController
 	end
 
 	def create
-		@review = @restaurant.reviews.build(review_params)
+
+		# @review = Review.new(review_params)  #can I use built ??
+		@review = @restaurant.reviews.build(review_params) 
+		# We have to use @restaurant in order to connect review and specific restaurant.
 		# @review.user = current_user
+		
 		if @review.save
-			redirect_to foodie_path, notice: 'Review created successfully'
+			redirect_to restaurants_path , notice:'Review created successfully'
 		else
-			render 'foodies/show'
+			 redirect_to restaurants_path
 		end
 	end
 
@@ -45,7 +48,9 @@ def review_params
 	params.require(:review).permit(:comments, :foodie_id)
 end
 
-def load_foody
-	@foody = Foody.find(params[:foodie_id])
+def load_restaurant
+	@restaurant = Restaurant.find(params[:restaurant_id])
 end
+
+# We use load_restaurant in order to find specific restaurant.
 

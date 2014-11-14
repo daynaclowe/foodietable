@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   resources :restaurants do
   resources :reviews
+end
 
-  
   resources :reservations
   resources :sessions, only: [:new, :create, :destroy]
 end
@@ -64,4 +64,3 @@ end
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
