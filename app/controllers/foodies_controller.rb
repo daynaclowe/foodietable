@@ -21,7 +21,7 @@ class FoodiesController < ApplicationController
   end
 
   def edit
-  	@foodie = Foodie.new(foodie_params[:id])
+  	@foodie = Foodie.find(params[:id])
   end
 
   private
