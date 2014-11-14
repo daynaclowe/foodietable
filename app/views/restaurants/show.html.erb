@@ -1,3 +1,10 @@
 <h1><%= @restaurant.name %></h1>
 
-<%= link_to "Create review" ,new_restaurant_review_path(@restaurant)%>
+<%= form_for([@restaurant,@review]) do |f| %>
+
+<div class="field"> 
+	<%= f.label :comments %><br/>
+	<%= f.text_area :comments %>
+</div>
+
+<% end %>
