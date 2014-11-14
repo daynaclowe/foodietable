@@ -23,7 +23,7 @@ class ReservationsController < ApplicationController
   	else
   		render :new
   	end
-  end
+  
 
   def update 	#saving the reservation
   	@reservation = Reservation.find(params[:id])
@@ -43,6 +43,6 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-  	params.require(:reservation).permit(:name, :user_phone, :email_address, :size_of_party, :comments_and_requests)
+  	params.require(:reservation).permit(:name, :user_phone, :email_address, :size_of_party, :comments_and_requests,:comments)
   end
 end
