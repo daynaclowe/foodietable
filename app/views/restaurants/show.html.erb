@@ -2,11 +2,16 @@
 
 
 
-
 <p>Reviews for <%= @restaurant.name %></p>
 
 <% @restaurant.reviews.each do |review| %>
 <p><%= review.comments %></p>
+<% end %>
+
+<% if flash[:notice] %>
+	<p class=notice>
+		<%= flash[:notice] %>
+	</p>
 <% end %>
 
 <%= form_for([@restaurant,@review]) do |f| %>
@@ -15,7 +20,6 @@
 	<%= f.label :comments %><br/>
 	<%= f.text_area :comments %>
 </div>
-
 
 <div class="actions">
 	<%= f.submit %> 

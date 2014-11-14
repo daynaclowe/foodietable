@@ -22,7 +22,8 @@ class ReviewsController < ApplicationController
 		# @review.user = current_user
 		
 		if @review.save
-			redirect_to restaurants_path , notice:'Review created successfully'
+			flash[:notice] = "Review created successfully!"
+			redirect_to restaurant_path(@restaurant) #, notice:'Review created successfully'
 		else
 			 redirect_to restaurants_path
 		end
