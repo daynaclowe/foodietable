@@ -16,8 +16,7 @@ class ReviewsController < ApplicationController
 
 	def create
 		@review = @foodie.reviews.build(review_params)
-		@review.user = current_user
-
+		# @review.user = current_user
 
 		if @review.save
 			redirect_to foody_path, notice: 'Review created successfully'
@@ -49,4 +48,4 @@ end
 def load_foody
 	@foody = Foody.find(params[:foodie_id])
 end
-end
+
