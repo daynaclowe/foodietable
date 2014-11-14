@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20141113221026) do
 
   create_table "foodies", force: true do |t|
     t.string   "name"
-    t.string   "password_digest"
+    t.string   "password"
     t.string   "email"
     t.text     "bio"
     t.datetime "created_at"
