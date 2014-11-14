@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   	foodie = Foodie.find_by(email: params[:email])
   	if foodie && foodie.authenticate(params[:password])
   		session[:foodie_id] = foodie.id
-  		redirect_to '/foodies/#{@foodie.id}', notice: "Logged in!" #how to get the path to show a single url
+  		redirect_to foody_path(foodie), notice: "Logged in!" #how to get the path to show a single url
   	else 
   		render "new"
   	end

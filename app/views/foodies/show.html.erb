@@ -1,2 +1,9 @@
 <h1>Foodies#show</h1>
-<p>Find me in app/views/foodies/show.html.erb</p>
+<p>This is your profile - Find me in app/views/foodies/show.html.erb</p>
+<br/>
+
+<h2 class="userinfo">
+      <% if current_user %>
+        Welcome <%= current_user.email %>!
+      <% end %>
+    </h2>
