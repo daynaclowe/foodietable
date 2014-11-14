@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
   def create
   	foodie = Foodie.find_by(email: params[:email])
   	if foodie && foodie.authenticate(params[:password])
-  		session[:foodie_id] = foodie_id
-  		redirect_to foody_path notice: "Logged in!"
+  		session[:foodie_id] = foodie.id
+  		redirect_to '/foodies/#{@foodie.id}', notice: "Logged in!" #how to get the path to show a single url
   	else 
   		render "new"
   	end
@@ -17,3 +17,4 @@ class SessionsController < ApplicationController
   	redirect_to foodies_path notice: "Logged out!"
   end
 end
+
