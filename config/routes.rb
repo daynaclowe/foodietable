@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   resources :foodies
 
   resources :restaurants do
+  resources :reservations
   resources :reviews
 end
 
-  resources :reservations
+  
   resources :sessions, only: [:new, :create, :destroy]
 end
 
