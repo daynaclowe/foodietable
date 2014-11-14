@@ -1,11 +1,12 @@
 <h1><%= @restaurant.name %></h1>
 
 
-
 <p>Reviews for <%= @restaurant.name %></p>
 
 <% @restaurant.reviews.each do |review| %>
-<p><%= review.comments %></p>
+	<p><%= review.comments %></p>
+
+	<%= link_to "Delete", restaurant_review_path(@restaurant,review), method: :delete, data:{confirm: "Are you sure you want to delete this comment?"}  %>
 <% end %>
 
 <% if flash[:notice] %>
@@ -16,14 +17,13 @@
 
 <%= form_for([@restaurant,@review]) do |f| %>
 
-<div class="field"> 
-	<%= f.label :comments %><br/>
-	<%= f.text_area :comments %>
-</div>
+	<div class="field"> 
+		<%= f.label :comments %><br/>
+		<%= f.text_area :comments %>
+	</div>
 
-<div class="actions">
-	<%= f.submit %> 
-</div>
+	<div class="actions">
+		<%= f.submit %> 
+	</div>
 <% end %>
-
 

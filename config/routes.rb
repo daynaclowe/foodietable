@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :foodies
 
   resources :restaurants do
-  resources :reviews
+    resources :reviews
   end
   
   resources :reservations
