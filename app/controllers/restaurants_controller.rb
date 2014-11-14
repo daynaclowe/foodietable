@@ -17,7 +17,6 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-
     @restaurant = Restaurant.new(restaurant_params)
     @restaurant[:phone_number] = restaurant_params[:phone_number].gsub(/[^0-9a-z ]/i, '')
 
@@ -46,7 +45,7 @@ class RestaurantsController < ApplicationController
 
   private
   def restaurant_params
-  	params.require(:restaurant).permit(:name, :password, :password_confirmation, :address, :capacity, :bio, :phone_number)
+  	params.require(:restaurant).permit(:name, :password, :password_confirmation, :address, :capacity, :bio, :phone_number,:comments)
   end
  
 end
