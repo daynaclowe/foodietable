@@ -14,7 +14,7 @@ class FoodiesController < ApplicationController
   def create
   	@foodie = Foodie.new(foodie_params)
   	if @foodie.save
-  		redirect_to foodies_url, notice: "You are now a foodie!"
+  		redirect_to foodies_path, notice: "You are now a foodie!"
   	else
   		render "new"
   	end
