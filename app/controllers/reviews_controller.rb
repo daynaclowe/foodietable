@@ -26,7 +26,8 @@ class ReviewsController < ApplicationController
 	def destroy
 		@review = @restaurant.reviews.find(params[:id])
 		# @review = Review.find(params[:id]
-			@review.destroy
+		@review.destroy
+		redirect_to restaurant_path(@restaurant) 
 	end
 
 
