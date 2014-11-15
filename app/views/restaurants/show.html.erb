@@ -1,4 +1,8 @@
 <h1><%= @restaurant.name %></h1>
+<b>Bio:</b> <%= @restaurant.bio %></br>
+<b>Address:</b> <%= @restaurant.address %></br>
+<b>Capacity:</b> <%= @restaurant.capacity %></br>
+<b>Phone Number:</b> <%= number_to_phone(@restaurant.phone_number,area_code: true) %></br><br>
 
 
 <p>Reviews for <%= @restaurant.name %></p>
@@ -15,6 +19,7 @@
 	</p>
 <% end %>
 
+
 <%= form_for([@restaurant,@review]) do |f| %>
 
 	<div class="field"> 
@@ -26,4 +31,7 @@
 		<%= f.submit %> 
 	</div>
 <% end %>
+
+
+<%= render 'reserve' %>
 
