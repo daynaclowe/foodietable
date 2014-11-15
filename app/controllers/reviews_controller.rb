@@ -8,37 +8,36 @@ class ReviewsController < ApplicationController
 
 	def show
 		@review = Review.find(params[:id])
-	end
 
-	def edit 
-		@review = Review.find(params[:id])
 	end
 
 	def create
-
-		# @review = Review.new(review_params)  #can I use built ??
 		@review = @restaurant.reviews.build(review_params) 
 		# We have to use @restaurant in order to connect review and specific restaurant.
 		# @review.user = current_user
-		
 		if @review.save
 			flash[:notice] = "Review created successfully!"
 			redirect_to restaurant_path(@restaurant) #, notice:'Review created successfully'
 		else
-			 redirect_to restaurants_path
+			redirect_to restaurants_path
 		end
 	end
 
 	def destroy
 		@review = @restaurant.reviews.find(params[:id])
 		# @review = Review.find(params[:id]
+			@review.destroy
+	end
 
-		@review.destroy
+
+	def edit 
+		@review = Review.find(params[:id])
 	end
 
 	def update
-		if @review.update_attributes(review_params)
-			redirect_to restaurant_path(@restaurant) 
+			@review = @restaurant.reviews.find(params[:id])
+			if @review.update_attributes(review_params)
+				redirect_to restaurant_path(@restaurant) 
 			# To defin the specific product 
 		else
 			render :edit
