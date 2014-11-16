@@ -17,19 +17,13 @@
         <%= link_to "Log in", new_session_path %> or <%= link_to "Create an Account", new_foody_path %>
       <% end %>
     </ul>
-<<<<<<< HEAD
-      
-    <ul>
-=======
 
     <ul class="main_menu">
->>>>>>> 80ac1289fcb7e91a8b98d15e83cd3d56ba5ccbe8
+
       <li>
          <%= link_to "Let's Eat!", restaurants_path %>
       </li>
-      <li>
-     
-      </li>
+    
       <% if current_user %>
       <li>
           <%= link_to "Your Foodie Profile!", foody_path(current_user) %>
