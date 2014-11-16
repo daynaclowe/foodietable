@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20141114193952) do
   create_table "restaurants", force: true do |t|
     t.string   "name"
     t.string   "password_digest"
-    t.text     "address"
+    t.string   "address"
     t.integer  "capacity"
     t.text     "bio"
     t.integer  "phone_number",    limit: 8

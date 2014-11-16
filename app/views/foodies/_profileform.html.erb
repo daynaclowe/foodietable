@@ -1,0 +1,24 @@
+<%= form_for(@current_user) do |f| %> 
+<% if @current_user.errors.any? %>
+	<div class="error_messages">
+		<h2>Form is invalid</h2>
+			<ul>
+				<% for message in @current_user.errors.full_messages %>
+				<li><% message %></li>
+				<% end %>
+			</ul>
+	</div>
+<% end %>
+
+<div class="field">
+	<%= f.label :bio %><br/>
+	<%= f.text_area :bio %>
+</div>
+
+<div class="field">
+	<%= f.label "Profile Picture" %><br/>
+	<%= f.file_field :picture %>
+</div>
+
+
+<% end %>
