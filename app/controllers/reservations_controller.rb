@@ -32,7 +32,7 @@ class ReservationsController < ApplicationController
   	@reservation = Reservation.find(params[:id])
 
   	if @reservation.update_attributes(reservation_params)
-  		redirect_to reservation_path(@reservation)
+  		redirect_to restaurant_reservation_path(@restaurant,@reservation)
   	else
   		render :edit
   	end
@@ -41,7 +41,7 @@ class ReservationsController < ApplicationController
   def destroy	#deleting the reservation
   	@reservation = Reservation.find(params[:id])
   	@reservation.destroy
-  	redirect_to reservations_path
+  	redirect_to restaurant_reservations_path(@restaurant,@reservation)
   end
 
   private
