@@ -6,7 +6,10 @@
 <p>Party size is <%= @reservation.size_of_party%></p>
 <p>Bon Appetit!</p>
 
-<p><%= link_to "Edit", edit_restaurant_reservation_path(@restaurant,@reservation) %> <%= link_to "Make another reservation", new_restaurant_reservation_path(@restaurant,@reservation) %></p>
+<p><%= link_to "Edit", edit_restaurant_reservation_path(@restaurant,@reservation) %> <%= link_to "Make another reservation", new_restaurant_reservation_path(@restaurant,@reservation) %>
+
+
+<%= link_to "Cancel your reservation.", restaurant_reservation_path(@restaurant,@reservation), method: :delete, data:{confirm: "Are you sure you want to cancel this reservation?"}  %></p>
 
 <!-- the reason why we have to use instance variable is to call variable from another file.
- -->
+ -->	
