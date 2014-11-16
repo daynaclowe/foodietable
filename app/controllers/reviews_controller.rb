@@ -31,6 +31,10 @@ class ReviewsController < ApplicationController
 	end
 
 
+
+
+
+
 	def edit 
 		@review = Review.find(params[:id])
 	end
@@ -48,7 +52,7 @@ end
 
 private
 def review_params
-	params.require(:review).permit(:comments, :foodie_id)
+	params.require(:review).permit(:comments, :title,:rating,:foodie_id)
 end
 
 def load_restaurant
