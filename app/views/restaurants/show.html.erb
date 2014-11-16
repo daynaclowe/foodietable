@@ -4,6 +4,7 @@
 <b>Capacity:</b> <%= @restaurant.capacity %></br>
 <b>Phone Number:</b> <%= number_to_phone(@restaurant.phone_number,area_code: true) %></br><br>
 
+<p><%= link_to "Make a Reservation!", new_restaurant_reservation_path(@restaurant,@reservation) %></p>
  
 
 <p>Reviews for <%= @restaurant.name %></p>
