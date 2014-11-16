@@ -5,6 +5,7 @@ class ReservationsController < ApplicationController
   end
 
   def show
+
   	@reservation = Reservation.find(params[:id])
   end
 
@@ -20,7 +21,7 @@ class ReservationsController < ApplicationController
   	@reservation = @restaurant.reservations.build(reservation_params)
 
   	if @reservation.save
-  		redirect_to restaurant_path(@restaurant) ## go to the confirmation page
+  		redirect_to restaurant_reservation_path(@restaurant,@reservation) ## go to the confirmation page
   	else
   		render :new
   	end
