@@ -16,9 +16,6 @@ class ReviewsController < ApplicationController
 		# We have to use @restaurant in order to connect review and specific restaurant.
 		# @review.user = current_user
 		if @review.save
-
-			redirect_to restaurant_path(@restaurant) , notice:'Review created successfully'
-
 			flash[:notice] = "Review created successfully!"
 			redirect_to restaurant_path(@restaurant) #, notice:'Review created successfully'
 
