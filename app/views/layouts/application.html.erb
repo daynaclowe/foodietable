@@ -17,10 +17,13 @@
         <%= link_to "Log in", new_session_path %> or <%= link_to "Create an Account", new_foody_path %>
       <% end %>
     </ul>
-
+      
     <ul>
       <li>
          <%= link_to "Let's Eat!", restaurants_path %>
+      </li>
+      <li>
+      <%= link_to "All restaurants" ,restaurants_path(@restaurants) %>
       </li>
       <% if current_user %>
       <li>
