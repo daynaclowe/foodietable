@@ -16,9 +16,7 @@ class ReviewsController < ApplicationController
 		# We have to use @restaurant in order to connect review and specific restaurant.
 		# @review.user = current_user
 		if @review.save
-
 			redirect_to restaurant_path(@restaurant),flash[:notice] = "Review created successfully!"
-			
 		else
 			redirect_to restaurants_path
 		end
@@ -30,11 +28,6 @@ class ReviewsController < ApplicationController
 		@review.destroy
 		redirect_to restaurant_path(@restaurant) 
 	end
-
-
-
-
-
 
 	def edit 
 		@review = Review.find(params[:id])

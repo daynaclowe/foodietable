@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+  before_filter :load_restaurant
   def index 
   	@reservations = Reservation.all
   end
@@ -13,18 +14,17 @@ class ReservationsController < ApplicationController
 
   def edit 		#make changes to the reservation
   	@reservation = Reservation.find(params[:id])
-
-    render :edit
   end
 
   def create 	#add the new reservation database
-  	@reservation = Reservation.new(reservation_params)
+  	@reservation = @restaurant.reservations.build(reservation_params)
 
   	if @reservation.save
-  		redirect_to reservation_path(@reservation) ## go to the confirmation page
+  		redirect_to restaurant_path(@restaurant) ## go to the confirmation page
   	else
   		render :new
   	end
+  end
   
 
   def update 	#saving the reservation
@@ -45,6 +45,14 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-  	params.require(:reservation).permit(:name, :user_phone, :email_address, :size_of_party, :comments_and_requests,:comments)
+  	params.require(:reservation).permit(:name, :user_phone, :email_address, :size_of_party, :comments_and_requests,:comments,:restaurant_id)
   end
+
+  def load_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
+  end
+
 end
+
+
+
