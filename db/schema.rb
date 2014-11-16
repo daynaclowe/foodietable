@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141114193952) do
+ActiveRecord::Schema.define(version: 20141116180921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "foodies", force: true do |t|
     t.string   "name"
-    t.string   "password_digest"
+    t.string   "password"
     t.string   "email"
     t.text     "bio"
     t.datetime "created_at"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20141114193952) do
   create_table "restaurants", force: true do |t|
     t.string   "name"
     t.string   "password_digest"
-    t.text     "address"
+    t.string   "address"
     t.integer  "capacity"
     t.text     "bio"
     t.integer  "phone_number",    limit: 8
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20141114193952) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "restaurant_id"
+    t.integer  "foodie_id"
   end
 
 end
