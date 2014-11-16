@@ -1,4 +1,4 @@
-<%= form_for(@reservation) do |f| %>
+<%= form_for([@restaurant,@reservation]) do |f| %>
 <!-- we need diner name, diner phone number, dinner email address, comments and request box, submit button -->
 <% if @reservation.errors.any? %>
 	<div id="error_explanation">
