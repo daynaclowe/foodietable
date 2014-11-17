@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20141116203057) do
 
   create_table "foodies", force: true do |t|
     t.string   "name"
-    t.string   "password_digest"
+    t.string   "password"
     t.string   "email"
     t.text     "bio"
     t.datetime "created_at"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20141116203057) do
 
   create_table "restaurants", force: true do |t|
     t.string   "name"
-    t.string   "password_digest"
+    t.string   "password"
     t.text     "address"
     t.integer  "capacity"
     t.text     "bio"
