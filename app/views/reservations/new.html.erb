@@ -1,5 +1,4 @@
-<h1>Let's Make Your Reservation at the <%= @restaurant.name %></h1>
-<h1><%= params[:res_time] %> </h1>
+<h1>Let's Make Your Reservation at the <%= @restaurant.name %> for <%= params[:res_time].to_datetime.strftime("%H:%M") %></h1>
 <p>Find me in app/views/reservations/new.html.erb</p>
 
 <%= render 'form' %> 
