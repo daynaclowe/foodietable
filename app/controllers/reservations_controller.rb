@@ -2,6 +2,7 @@ class ReservationsController < ApplicationController
   before_filter :load_restaurant
   def index 
   	@reservations = Reservation.all
+    @restaurants = Restaurant.all
   end
 
   def show
@@ -20,6 +21,7 @@ class ReservationsController < ApplicationController
 
   def create 	#add the new reservation database
   	@reservation = @restaurant.reservations.build(reservation_params)
+   @restaurants = Restaurant.all
   	if @reservation.save
   		redirect_to restaurant_reservation_path(@restaurant,@reservation) ## go to the confirmation page
   	else
@@ -51,6 +53,8 @@ class ReservationsController < ApplicationController
 
   def load_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
+        @restaurants = Restaurant.all
+
   end
 
 end

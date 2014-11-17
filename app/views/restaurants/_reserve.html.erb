@@ -19,9 +19,17 @@
 <% while time_now < time_end %>
 	<% time_now += 10*60*3 %>
 	<li>
+		<% space_available=@restaurant.capacity %>
 		<%= texttime = time_now.strftime("%H:%M") %>
 		<%= link_to "Reserve", new_restaurant_reservation_path(@restaurant,@reservation,:reservationtime => texttime) %>
 		Space Available: 
+		<% @reservations = @restaurant.reservations %>
+		<% @reservations.each do |reservation| %>
+			<% if reservation.res_time != nil && reservation.res_time > time_now && reservation.res_time < (time_now+(10*60*6)) %>
+				<% space_available -= reservation.size_of_party %>
+			<% end %>
+		<% end %>
+		<%= space_available %>
 	</a>
 	</li>
 <% end %>
