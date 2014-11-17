@@ -11,6 +11,7 @@
       	</ul>
     </div>
 <% end %>
+
 	<div class="field">
 		<%= f.label :name %><br/>
 		<%= f.text_field :name %>
@@ -26,6 +27,7 @@
 	<div class="field">
 		<%= f.label :size_of_party %><br/>
 		<%= f.number_field :size_of_party %>
+
 	</div>
 	<div class="field">
 		<%= f.label :comments_and_requests %><br/>
@@ -33,5 +35,6 @@
 	</div>
 	<div class="actions">
 		<%= f.submit %>
+		<%= f.hidden_field :res_time, :value =>params[:res_time]%>
 	</div>
 <% end %>

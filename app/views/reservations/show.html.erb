@@ -1,4 +1,4 @@
-<h1>Your Reservation has been made at RESTAURANT NAME</h1>
+<h1>Your Reservation has been made at <%= @restaurant.name %> for <%= @reservation.res_time.strftime("%H:%M") %></h1>
 <p>Here's your reservation!</p>
 <p>RESERVATION CONFIRMED. YAY!</p>
 

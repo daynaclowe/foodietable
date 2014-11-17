@@ -29,7 +29,6 @@ class ReservationsController < ApplicationController
 
   def update 	#saving the reservation
   	@reservation = Reservation.find(params[:id])
-
   	if @reservation.update_attributes(reservation_params)
   		redirect_to restaurant_reservation_path(@restaurant,@reservation)
   	else
@@ -45,7 +44,7 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-  	params.require(:reservation).permit(:name, :user_phone, :email_address, :size_of_party, :comments_and_requests,:comments,:restaurant_id)
+  	params.require(:reservation).permit(:name, :user_phone, :email_address, :size_of_party, :comments_and_requests,:comments,:restaurant_id, :res_time)
   end
 
   def load_restaurant

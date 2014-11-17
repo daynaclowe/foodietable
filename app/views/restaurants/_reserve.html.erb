@@ -13,14 +13,14 @@
 <h2>Make a Reservation</h2>
 
 <li><%= time_now.strftime("%H:%M") %>		
-	<% reservetime = 10 %>
-	<%= link_to "Reserve", new_restaurant_reservation_path(@restaurant,@reservation, :reservationtime => reservetime) %>
+	<% texttime = time_now.strftime("%H:%M") %>
+	<%= link_to "Reserve", new_restaurant_reservation_path(@restaurant,@reservation, :res_time => time_now) %>
 </li>
 <% while time_now < time_end %>
 	<% time_now += 10*60*3 %>
 	<li>
 		<%= texttime = time_now.strftime("%H:%M") %>
-		<%= link_to "Reserve", new_restaurant_reservation_path(@restaurant,@reservation,:reservationtime => texttime) %>
+		<%= link_to "Reserve", new_restaurant_reservation_path(@restaurant,@reservation,:res_time => time_now) %>
 	</a>
 	</li>
 <% end %>
