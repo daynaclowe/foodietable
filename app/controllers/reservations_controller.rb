@@ -19,7 +19,6 @@ class ReservationsController < ApplicationController
 
   def create 	#add the new reservation database
   	@reservation = @restaurant.reservations.build(reservation_params)
-
   	if @reservation.save
   		redirect_to restaurant_reservation_path(@restaurant,@reservation) ## go to the confirmation page
   	else

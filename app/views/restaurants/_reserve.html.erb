@@ -11,9 +11,17 @@
 <% time_now = time_to_next_quarter_hour(Time.now) %>
 
 <h2>Make a Reservation</h2>
-<li><%= time_now.strftime("%H:%M") %></li>
+
+<li><%= time_now.strftime("%H:%M") %>		
+	<% reservetime = 10 %>
+	<%= link_to "Reserve", new_restaurant_reservation_path(@restaurant,@reservation, :reservationtime => reservetime) %>
+</li>
 <% while time_now < time_end %>
 	<% time_now += 10*60*3 %>
-	<li><%= time_now.strftime("%H:%M") %></li>
+	<li>
+		<%= texttime = time_now.strftime("%H:%M") %>
+		<%= link_to "Reserve", new_restaurant_reservation_path(@restaurant,@reservation,:reservationtime => texttime) %>
+	</a>
+	</li>
 <% end %>
 

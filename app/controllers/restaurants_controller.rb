@@ -20,7 +20,7 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     @restaurant[:phone_number] = restaurant_params[:phone_number].gsub(/[^0-9a-z ]/i, '')
-
+    
     @restaurant.save
     if @restaurant.save
       redirect_to restaurants_url
