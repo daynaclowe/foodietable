@@ -1,4 +1,4 @@
-<h1>Your Reservation has been made at RESTAURANT NAME</h1>
+<h1>Your Reservation has been made at <%= @restaurant.name %> for <%= @reservation.res_time.strftime("%H:%M") %></h1>
 <p>Here's your reservation!</p>
 <p>RESERVATION CONFIRMED. YAY!</p>
 
@@ -12,4 +12,4 @@
 <%= link_to "Cancel your reservation.", restaurant_reservation_path(@restaurant,@reservation), method: :delete, data:{confirm: "Are you sure you want to cancel this reservation?"}  %></p>
 
 <!-- the reason why we have to use instance variable is to call variable from another file.
- -->	
+ -->

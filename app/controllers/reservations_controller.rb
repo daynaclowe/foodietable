@@ -11,6 +11,7 @@ class ReservationsController < ApplicationController
 
   def new 		#user to create a reservation using the form
   	@reservation = Reservation.new
+    @restaurants = Restaurant.all
   end
 
   def edit 		#make changes to the reservation

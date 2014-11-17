@@ -21,7 +21,18 @@
 	<li>
 		<%= texttime = time_now.strftime("%H:%M") %>
 		<%= link_to "Reserve", new_restaurant_reservation_path(@restaurant,@reservation,:reservationtime => texttime) %>
+		Space Available: 
 	</a>
 	</li>
 <% end %>
+<!-- 
+for every restaurant reservation
+	if (reservation.time is greater or equal to time_now by an hour)
+		space_left -= reservation.seats
+	end
+end
+ -->
+
+
+
 
