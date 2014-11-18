@@ -3,6 +3,8 @@ class SessionsController < ApplicationController
   end
 
   def create
+    debugger
+
   	foodie = Foodie.find_by(email: params[:email])
   	if foodie && foodie.authenticate(params[:password])
   		session[:foodie_id] = foodie.id
