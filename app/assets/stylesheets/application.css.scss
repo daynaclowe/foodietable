@@ -2,3 +2,82 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {margin-left:-20px;
+ margin-right:-20px;}
+
+.navbar navbar-default {
+	background: black;
+}
+
+.container {
+list-style: none;
+background: #c532ff; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #c532ff 0%, #ff8c8c 53%, #ffeb8c 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#c532ff), color-stop(53%,#ff8c8c), color-stop(100%,#ffeb8c)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(45deg,  #c532ff 0%,#ff8c8c 53%,#ffeb8c 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(45deg,  #c532ff 0%,#ff8c8c 53%,#ffeb8c 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(45deg,  #c532ff 0%,#ff8c8c 53%,#ffeb8c 100%); /* IE10+ */
+background: linear-gradient(45deg,  #c532ff 0%,#ff8c8c 53%,#ffeb8c 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c532ff', endColorstr='#ffeb8c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+width: auto;
+height: auto;
+box-sizing: content-box;
+
+}
+/* navbar */
+.navbar-default {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+/* title */
+.navbar-default .navbar-brand {
+    color: #FFFFFF;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #FFFFFF;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #FFF;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #FFFFFF;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #000000;
+    background-color: #000000;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #FFF;
+    background-color: #333333;
+}
+
+.title-page{
+	height: 100vh;
+
+}
+
+.center-block {
+		height: 100vh;
+		width:100vw;
+	text-align: center;
+	display:table-cell;
+    vertical-align:middle;
+    float:none;
+    padding-bottom: 200px;
+
+}
+ul{
+     list-style:none;
+     padding-left: 0
+}
