@@ -1,11 +1,4 @@
 
-<% def time_to_next_quarter_hour(time) %> 
-    <% array = time.to_a %>
-    <% half = ((array[1] % 60) / 30.0).ceil %>
-    <% array[1] = (half * 30) % 60 %>
-    <% Time.local(*array) + (half == 4 ? 3600 : 0) %>
-<% end %>
-
 <% time_start = Time.now %></br>
 <% time_end = Time.now.change({ hour: 22, min: 0, sec: 0 }) %>
 <% time_now = time_to_next_quarter_hour(Time.now) %>
@@ -13,7 +6,7 @@
 <h2>Make a Reservation</h2>
 
 <% while time_now < time_end %>
-	<% time_now += 10*60*3 %>
+	<% time_now += 30*60 %>
 	<li>
 		<% space_available=@restaurant.capacity %>
 		<%= texttime = time_now.strftime("%H:%M") %>
